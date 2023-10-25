@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Stylesheet/Full_Stylesheet.css">
+
+</head>
+<body style="background-color: transparent;"> 
+    <header>
+        <a href="HomePage.html">
+            <img src="Stylesheet/CTU buddy Corner.png" alt="Your Website Logo" class="logo">
+        </a>
+
+        <button type="button" class="login-btn" onclick="toggleLogin()">Login</button>
+        <div class="login-overlay" id="loginOverlay">
+            <div class="cotn_principal">
+                <div class="cont_centrar">
+                    <div class="cont_login">
+                        <div class="cont_info_log_sign_up">
+                            <div class="col_md_login">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>LOGIN</h2>
+                                    <button class="btn_login" onclick="change_to_login()">LOGIN</button>
+                                </div>
+                            </div>
+                            <div class="col_md_sign_up">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>SIGN UP</h2>
+                                    <button class="btn_sign_up" onclick="change_to_sign_up()">SIGN UP</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cont_back_info">
+                            <div class="cont_img_back_grey">
+                                <img src="Stylesheet/backtin.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="cont_forms" >
+                            <div class="cont_img_back_">
+                                <img src="Stylesheet/backtin.jpg" alt="" />
+                            </div>
+                            <div class="cont_form_login">
+                                <a href="TimeTable.html" onclick="hidden_login_and_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>LOGIN</h2>
+                                <input type="text" placeholder="Email" />
+                                <input type="password" placeholder="Password" onclick="testLogin()"/>
+                                <input type="submit" id="btn_login_id" class="btn_login" name="btn_login" value="LOGIN" onclick="testLogin()" />
+                            </div>
+                            <div class="cont_form_sign_up">
+                                <a href="TimeTable.html" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>SIGN UP</h2>
+                                <input type="text" placeholder="Email" />
+                                <input type="text" placeholder="User" />
+                                <input type="password" placeholder="Password" />
+                                <input type="password" placeholder="Confirm Password" />
+                                <input type="submit" id="btn_login_id" class="btn_sign_up" name="btn_login" value="SIGN UP" onclick="testLogin()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="display">
+            <div class="navigation" style="z-index: 100;">
+                <ul>
+                    <li>
+                        <a href="HomePage.html"> <!--Link to the Home page-->
+                            <span class="icon">
+                                <ion-icon name="Home-outline"></ion-icon>
+                            </span>
+                            <span class="title" >Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="TimeTable.html"> <!--Link to the TimeTable page-->
+                            <span class="icon">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">TimeTable</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Discussion/Discussion.php"> <!--Link to the Discussion page-->
+                            <span class="icon">
+                                <ion-icon name="chatbubbles-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">Discussion</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Shared Resources/shared_resources.php"> <!--Link to the Share Resources page-->
+                            <span class="icon">
+                                <ion-icon name="share-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="" >Share Resources</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="About Us.html"> <!--Link to the About us page-->
+                            <span class="icon">
+                                <ion-icon name="help-circle-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="" style="padding-left: -20px;">About us</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="Contact Us.html"> <!--Link to the Contact us page-->
+                            <span class="icon">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">Contact us</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div style="height: 40vw;"></div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<style>
+table {
+    width: 80%;
+    table-layout: fixed;
+    margin: 0 auto;
+
+    }
+    th, td {
+        border: 1px black;
+        padding: 0.2px;
+        text-align: center;
+    }
+
+        th {
+        background-color: white;
+    }
+    tr:nth-child(even) {
+        background-color: white;
+    }
+
+    h1 {
+    font-size: 70px;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    }
+
+    h2 {
+    font-size: 14px;
+    }
+
+    #Th1 {
+        font-family: "Engravers MT", cursive;
+        color: rgb(255, 255, 255);
+        position: absolute;
+        left: 44%;
+    }
+    
+    
+    #Th2 {
+        font-family: "Copperplate Gothic Light";
+        color: rgb(148, 169, 165);
+        position: absolute;
+        top: 80%;
+        left: 28.5%;
+    }
+    
+    #Th3 {
+        font-family: "Copperplate Gothic Light";
+        color: rgb(148, 169, 165);
+        position: absolute;
+        top: 25%;
+        left: 62.7%;
+    }
+
+
+    A1{
+        position: absolute;
+        top: 17%;
+        left: 43%;
+        font-size: 35px;
+        color:aqua
+    }
+
+    A2{
+        position: absolute;
+        top: 23%;
+        left: 35%;
+        color: aqua;
+    }
+
+    A3{
+        position: absolute;
+        top: 23%;
+        left: 47%;
+    }
+
+    A4{
+        position: absolute;
+        top: 27%;
+        left: 50%;
+    }
+    
+    A5{
+        position: absolute;
+        top: 35%;
+        left: 10%;
+    }
+
+    A6{
+        position: absolute;
+        top: 32%;
+        left: 20%;
+        color: aqua;
+    }
+
+    A7{
+        position: absolute;
+        top: 35%;
+        left: 8%;
+    }
+
+    .T1 {
+        background-color: white;
+    }
+
+    A8{
+        position: absolute;
+        top: -18%;
+        left: 15%;
+        color: aqua;
+    }
+
+    A9{
+        position: relative;
+        top: -300px;
+        left: auto;
+        background-color: aqua;
+    }
+tr {
+    background-color: white;
+}
+
+    #firstyear {display: none;}
+    
+    #Secondyear{display: none;}
+    
+    #Yearplanner{display: none;}
+
+    #pdfSelect {
+        position: relative;
+        top: -115px;
+        left:--10px;
+    }
+    #downloadButton{
+        position: relative;
+        top: -120px;
+        left:10px;
+    }
+    #PdfText {
+        position: relative;
+        top:-115px;
+        left:-10px;
+        color:aqua;
+    }
+    #downloadLinkContainer {
+        position:relative;
+        top:-100px;
+        left:18px;
+        color:aqua;
+        text-decoration: none;
+    }
+    </style>
+
+        <body> <A1>Timetables</A1>
+        <div class="timetable-selector">
+            <label for="timetable"><A2>Select a Timetable:</label></A2>
+        <A3>
+            <select id="timetable">
+                <option value="">Select a Timetable:</option>
+                <option value="firstyear">Programming Foundation</option>
+                <option value="Secondyear">Software Development</option>
+                <option value="Yearplanner">Year Planner</option>
+            </select>
+        </A3>
+        </div>
+        <div class="timetable-display" id="firstyear">
+            <head>
+                <title>time table</title>
+            </head>
+            <A6>Programming Foundation Weekly Timetable</A6>
+            <A7>
+            <table border="2" cellspacing="3" align="center">
+            <tr>
+            <td align="center" class="T1">
+            <td class="T1">8:30-9:30
+            <td class="T1">9:30-10:30
+            <td class="T1">10:3-11:30
+            <td class="T1">11:30-12:30
+            <td class="T1">12:30-2:00
+            <td class="T1">2:00-3:00
+            <td class="T1">3:00-4:00
+            <td class="T1">4:00-5:00
+            </tr>
+            <tr>
+            <td align="center">MONDAY
+            <td align="center">ITS<td align="center"><font color="blue">CAF412<br>
+            <td align="center"><font color="pink">DLP412<br>
+            <td align="center"><font color="red">PRP412<br>
+            <td rowspan="6"align="center">L<br>U<br>N<br>C<br>H
+            <td align="center"><font color="maroon">PPD412<br>
+            <td align="center"><font color="brown">PRP412<br>
+            <td align="center">SELF STUDY
+            </tr>
+            <tr>
+            <td align="center" class="T1">TUESDAY
+            <td align="center" class="T1"><font color="blue">CAF412<br>
+            <td align="center" class="T1"><font color="red">DLP412<br>
+            <td align="center" class="T1"><font color="pink">PRP412<br>
+            <td align="center" class="T1">DLP412
+            <td align="center" class="T1"><font color="orange">PPD412<BR>
+            <td align="center" class="T1"><font color="maroon">PRP412<br>
+            <td align="center" class="T1">SELF STUDY
+            </tr>
+            <tr>
+            <td align="center">WEDNESDAY
+            <td align="center"><font color="pink">CAF412<br>
+            <td align="center"><font color="orange">DLP412<BR>
+            <td align="center"><font color="brown">PRP412<br>
+            <td align="center">PPD412
+            <td colspan="3" align="center"><font color="green">Formatives
+            </tr>
+            <tr>
+            <td align="center" class="T1">THURSDAY
+            <td align="center" class="T1">CAF412<br>
+            <td align="center" class="T1"><font color="brown">DLP412<br>
+            <td align="center" class="T1"><font color="orange">PRP412<BR>
+            <td align="center" class="T1">PRP412
+            <td align="center" class="T1"><font color="blue">PPD412<br>
+            <td align="center" class="T1"><font color="red">PRP412<br>
+            <td align="center" class="T1">SELF STUDY
+            </tr>
+            <tr>
+            <td align="center">FRIDAY
+            <td align="center"><font color="orange">CAF412<BR>
+            <td align="center"><font color="maroon">DLP412<br>
+            <td align="center"><font color="blue">PRP412<br>
+            <td align="center">PRP412
+            <td align="center"><font color="pink">DLP412<br>
+            <td align="center"><font color="brown">PPD412<br>
+            <td align="center">SELF STUDY
+            </tr>
+            </table>
+        </A7>
+        </div>
+        <A5>
+        <div class="timetable-display" id="Secondyear">
+            <head>
+                <title>time table</title>
+            </head>
+            <body>
+            <A8>Software Development Weekly Timetable</A8>
+            <table border="2" cellspacing="3" align="center">
+            <tr>
+            <td align="center" class="T1">
+            <td class="T1">8:30-9:30
+            <td class="T1">9:30-10:30
+            <td class="T1">10:3-11:30
+            <td class="T1">11:30-12:30
+            <td class="T1">12:30-2:00
+            <td class="T1">2:00-3:00
+            <td class="T1">3:00-4:00
+            <td class="T1">4:00-5:00
+            </tr>
+            <tr>
+            <td align="center">MONDAY
+            <td align="center">ITS<td align="center"><font color="blue">RD412<br>
+            <td align="center"><font color="pink">CW412<br>
+            <td align="center"><font color="red">RD412<br>
+            <td rowspan="6"align="center">L<br>U<br>N<br>C<br>H
+            <td align="center"><font color="maroon">ENA412<br>
+            <td align="center"><font color="brown">ENA412<br>
+            <td align="center">SELF STUDY
+            </tr>
+            <tr>
+            <td align="center" class="T1">TUESDAY
+            <td align="center" class="T1"><font color="blue">RD412<br>
+            <td align="center" class="T1"><font color="red">CW412<br>
+            <td align="center" class="T1"><font color="pink">RD412<br>
+            <td align="center" class="T1">CF412
+            <td align="center" class="T1"><font color="orange">CW412<BR>
+            <td align="center" class="T1"><font color="maroon">CF412<br>
+            <td align="center" class="T1">SELF STUDY
+            </tr>
+            <tr>
+            <td align="center">WEDNESDAY
+            <td align="center"><font color="pink">CW412<br>
+            <td align="center"><font color="orange">RD412<BR>
+            <td align="center"><font color="brown">CF412<br>
+            <td align="center">CF412
+            <td colspan="3" align="center"><font color="green">Formatives
+            </tr>
+            <tr>
+            <td align="center" class="T1">THURSDAY
+            <td align="center" class="T1">ENA412<br>
+            <td align="center" class="T1"><font color="brown">RD412<br>
+            <td align="center" class="T1"><font color="orange">CW412<BR>
+            <td align="center" class="T1">ENA412
+            <td align="center" class="T1"><font color="blue">CF412<br>
+            <td align="center" class="T1"><font color="red">RD412<br>
+            <td align="center" class="T1">SELF STUDY
+            </tr>
+            <tr>
+            <td align="center">FRIDAY
+            <td align="center"><font color="orange">CF412<BR>
+            <td align="center"><font color="maroon">CW412<br>
+            <td align="center"><font color="blue">PRP412<br>
+            <td align="center">ENA412
+            <td align="center"><font color="pink">RD412<br>
+            <td align="center"><font color="brown">CW412<br>
+            <td align="center">SELF STUDY
+            </tr>
+            </table>
+        </div>
+    </A5>
+    <A9>
+        <div class="timetable-display" id="Yearplanner">
+            <head>
+                <style>
+                    .WeekSpace{
+                        /*padding-left: 250px;
+                        padding-right: 250px;*/
+                        background-color: white;
+                    }
+                    th{
+                        color: darkcyan;
+                        justify-content: center;
+                        font-size: large;
+                    }
+                </style>
+                <title>
+                    Timetable
+                </title>
+            </head>
+                <Table border="2" cellspacing="3" align="center">
+                    <th colspan="2">
+                        Student Calendar 2024
+                    </th>
+                    <tr align="center">
+                        <td colspan="2">JANUARY</td>
+                    </tr>
+                    <tr align="center">
+                        <td class="T1">WEEK 1</td>
+                        <td class="WeekSpace">Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 2</td>
+                        <td>Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 3</td>
+                        <td>Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 4</td>
+                        <td>Holiday</td>
+                    <tr align="center">
+                        <td colspan="2">FEBRUARY</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 5</td>
+                        <td class="WeekSpace">HOLIDAY</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 6</td>
+                        <td>Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 7</td>
+                        <td>Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 8</td>
+                        <td>Orentation</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">MARCH</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 9</td>
+                        <td class="WeekSpace">Photo Day </td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 10</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 11</td>
+                        <td>Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 12</td>
+                        <td>Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">APRIL</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 13</td>
+                        <td class="WeekSpace">National Test Week</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 14</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 15</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 16</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">MAY</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 17</td>
+                        <td class="WeekSpace"></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 18</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 19</td>
+                        <td>Prelim Prep</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 20</td>
+                        <td>Prelims for International Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">JUNE</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 21</td>
+                        <td class="WeekSpace">Prelims for International Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 22</td>
+                        <td>1 Semester <I></I>International Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 23</td>
+                        <td>National Exam Prep</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 24</td>
+                        <td>First Semester National Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">JULY</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 25</td>
+                        <td class="WeekSpace">Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 26</td>
+                        <td>Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 27</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 28</td>
+                        <td>National Supp</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">AUGUST</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 29</td>
+                        <td class="WeekSpace"></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 30</td>
+                        <td>National Test Week</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 31</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 32</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">SEPTEMBER</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 33</td>
+                        <td class="WeekSpace"></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 34</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 35</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 36</td>
+                        <td>Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">OCTOBER</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 37</td>
+                        <td class="WeekSpace"></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 38</td>
+                        <td>Prelims For Internationals</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 39</td>
+                        <td></td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 40</td>
+                        <td>Second Semester International Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">NOVEMBER</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 41</td>
+                        <td class="WeekSpace">Second Semester International Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 42</td>
+                        <td>National Exam Prep</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 43</td>
+                        <td>Second Semester National Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 44</td>
+                        <td>Second Semester National Exams</td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2">DECEMBER</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 45</td>
+                        <td class="WeekSpace">Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 46</td>
+                        <td>Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 47</td>
+                        <td>Student Holiday</td>
+                    </tr>
+                    <tr align="center">
+                        <td>WEEK 48</td>
+                        <td>Student Holiday</td>
+                    </tr>
+                </Table>
+        </div>
+        </A9>
+
+        <label for="pdfSelect" id="PdfText">Select a PDF:</label>
+    <select id="pdfSelect">
+        <option value="">Select a PDF:</option>
+        <option value="pdf1">Programming Foundation</option>
+        <option value="pdf2">Software Development</option>
+        <option value="pdf3">Year Planner</option>
+    </select>
+    <br><br>
+    <button id="downloadButton" >Download PDF</button>
+    <div id="downloadLinkContainer" style="text-decoration: none">
+        <!-- PDF download link will be displayed here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pdfSelect = document.getElementById('pdfSelect');
+            const downloadButton = document.getElementById('downloadButton');
+            const downloadLinkContainer = document.getElementById('downloadLinkContainer');
+
+            downloadButton.addEventListener('click', function () {
+                const selectedOption = pdfSelect.value;
+
+                // Replace these URLs with the actual URLs of your PDF files
+                const pdfURLs = {
+                    pdf1: 'FoundationTimetable.pdf',
+                    pdf2: 'SoftwareTimetable.pdf',
+                    pdf3: 'YearPlanner.pdf',
+                };
+
+                // Get the selected PDF URL
+                const selectedPDFURL = pdfURLs[selectedOption];
+
+                // Create a download link and update the container
+                const downloadLink = document.createElement('a');
+                downloadLink.href = selectedPDFURL;
+                downloadLink.download = 'timetable.pdf'; // You can set the desired filename here
+                downloadLink.textContent = 'Click Here to Download your PDF';
+
+                // Clear previous content and append the download link
+                downloadLinkContainer.innerHTML = '';
+                downloadLinkContainer.appendChild(downloadLink);
+            });
+        });
+    </script>
+
+<script>
+    $(document).ready(function() {
+        $('#exportBtn').on('click', function() {
+            alert("Download feature coming soon");
+            var table = $('#firstyear').clone();
+            //window.print()
+            var link = $('<a>Download PDF</a>').attr({
+            href: 'data:application/pdf;base64,' + btoa(table.html()),
+            download: 'table.pdf'
+    });
+            $('body').append(link);
+            link.trigger('click');
+                link.remove();
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+            const timetableSelector = document.getElementById("timetable");
+            const timetableDisplays = document.querySelectorAll(".timetable-display");
+
+    timetableSelector.addEventListener("change", function () {
+        const selectedTimetable = timetableSelector.value;
+
+        // Hide all timetables
+    timetableDisplays.forEach(function (timetableDisplay) {
+        timetableDisplay.style.display = "none";
+    });
+
+    // Show the selected timetable
+    document.getElementById(selectedTimetable).style.display = "block";
+    });
+});
+</script>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>      
+            <div id="timetableDisplay"></div> 
+
+        </body>
+<footer class="Hfooter">
+    <div class="Hfooter-content">
+        <div class="footer-section2">
+            <h3 style="position: absolute; left: 12.9%; top: -3%;">
+                Navigation
+            </h3>
+            <nav>
+                <ul class="space">
+                    <li><a href="HomePage.html">Home</a></li>
+                    <li><a href="TimeTable.html">Timetable</a></li>
+                    <li><a href="Discussion/Discussion.php">Discussion</a></li>
+                    <br>
+                    <li><a href="Shared Resources/shared_resources.php">Shared Resources</a></li>
+                    <li><a href="About Us.html">About us</a></li>
+                    <li><a href="Contact Us.html">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="Lfooter-section2">
+            <h3>
+                Location
+            </h3>
+            <p>
+                CTU Buddy 1st Floor, Pretty Suites Office Block,
+                <br> Pretty Gardens Lifestyle Centre, Du Plessis Road,
+                <br> Langenhoven Park, Bloemfontein
+            </p>
+            <P>
+                South Africa
+            </p>
+            <p id="Text">
+                &copy; 2023 Secret Agent Benjamin Sandwich. All rights reserved.
+            </p>
+        </div>
+        <div class="footer-section2">
+            <h3 style="position: absolute; right: 14.5%;">
+                Connect
+            </h3>
+            <ul class="social">
+                <li class="reddit">
+                    <a href="https://www.reddit.com/r/CTUBuddyTHING/">
+                        <i class="fa fa-reddit" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="twitter">
+                    <a href="https://twitter.com/SecretAgentBeni">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="linkedin">
+                    <a href="http://www.linkedin.com/in/benjamin-undefined-a09a57285">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script>
+    // Show/hide login overlay when the login button is clicked
+    function toggleLogin() {
+        const loginOverlay = document.getElementById('loginOverlay');
+        loginOverlay.style.visibility = "visible";
+    }
+    
+    // Handle login form submission
+    function handleLogin(event) {
+        event.preventDefault();
+        // Perform login logic here (e.g., redirect to home page)
+        window.location.href = "Homepage.html"; // Redirect to home page
+        return false;
+    }
+
+    // JavaScript to handle navigation opening and closing
+    const navigation = document.querySelector('.navigation');
+    const navigationIcons = document.querySelectorAll('.navigation ul li');
+    
+    navigationIcons.forEach((icon) => {
+        icon.addEventListener('mouseover', () => {
+            navigation.classList.add('active');
+        });
+        
+        icon.addEventListener('mouseout', () => {
+            navigation.classList.remove('active');
+        });
+    });
+
+    /* ------------------------------------ Click on login and Sign Up to  changue and view the effect---------------------------------------*/
+    const time_to_show_login = 400;
+    const time_to_hidden_login = 200;
+
+    function change_to_login() {
+        document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
+        document.querySelector('.cont_form_login').style.display = "block";
+        document.querySelector('.cont_form_sign_up').style.opacity = "0";
+
+        setTimeout(function(){
+            document.querySelector('.cont_form_login').style.opacity = "1"; 
+        },time_to_show_login);
+
+        setTimeout(function(){
+            document.querySelector('.cont_form_sign_up').style.display = "none";
+        },time_to_hidden_login);
+    }
+
+    const time_to_show_sign_up = 100;
+    const time_to_hidden_sign_up = 400;
+
+    function change_to_sign_up() {
+        document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+        document.querySelector('.cont_form_sign_up').style.display = "block";
+        document.querySelector('.cont_form_login').style.opacity = "0";
+
+        setTimeout(function(){
+            document.querySelector('.cont_form_sign_up').style.opacity = "1";
+        },time_to_show_sign_up);
+
+        setTimeout(function(){
+            document.querySelector('.cont_form_login').style.display = "none";
+        },time_to_hidden_sign_up);
+    }
+
+    const time_to_hidden_all = 500;
+
+    function hidden_login_and_sign_up() {
+        document.querySelector('.cont_forms').className = "cont_forms";
+        document.querySelector('.cont_form_sign_up').style.opacity = "0";
+        document.querySelector('.cont_form_login').style.opacity = "0";
+
+        setTimeout(function(){
+            document.querySelector('.cont_form_sign_up').style.display = "none";
+            document.querySelector('.cont_form_login').style.display = "none";
+        },time_to_hidden_all);
+    }
+
+    document.getElementsById('btn_login_id').addEventListener('click', testLogin);
+
+    function testLogin()
+    {
+        window.location.href = "TimeTable.html";
+    }
+</script>
+</body>
+
+</html>
+

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Stylesheet/Full_Stylesheet.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <title>
+        Homepage
+    </title>
+
+    <style>
+        #TestPic{
+            width: 800px;
+            height: 400px;
+            margin-top: 150px;
+            /*padding-top: 150px;
+            position: relative;
+            top: 100%;
+            left: 22%;*/
+        }
+        
+        .container { /*This is makes box that the image and the text fits into*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .Himage { /*This makes the image round and the size of the image*/
+            flex-basis: 19%;
+            width: 250px;
+            height: 250px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+
+        .Himage2 {
+            flex-basis: 19%;
+                width: 250px;
+                height: 250px;
+                border-radius: 70%;
+                overflow: hidden;
+                
+            }
+
+        .Himage3 {
+            flex-basis: 19%;
+            width: 700px;
+            height: 270px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+        
+        .Htext {
+            font-size: 35px;
+            
+            text-align: right;
+            color: rgb(226, 226, 226)
+        }
+
+        .Htext2 {
+            font-size: 35px;
+            padding: 5%;
+            text-align: left;
+            color: rgb(226, 226, 226);
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <a href="HomePage.html">
+            <img src="Stylesheet/CTU buddy Corner.png" alt="Your Website Logo" class="logo">
+        </a>
+
+        <button type="button" class="login-btn" onclick="toggleLogin()">Login</button>
+        <div class="login-overlay" id="loginOverlay">
+            <div class="cotn_principal">
+                <div class="cont_centrar">
+                    <div class="cont_login">
+                        <div class="cont_info_log_sign_up">
+                            <div class="col_md_login">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>LOGIN</h2>
+                                    <button class="btn_login" onclick="change_to_login()">LOGIN</button>
+                                </div>
+                            </div>
+                            <div class="col_md_sign_up">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>SIGN UP</h2>
+                                    <button class="btn_sign_up" onclick="change_to_sign_up()">SIGN UP</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cont_back_info">
+                            <div class="cont_img_back_grey">
+                                <img src="Stylesheet/backtin.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="cont_forms" >
+                            <div class="cont_img_back_">
+                                <img src="Stylesheet/backtin.jpg" alt="" />
+                            </div>
+                            <div class="cont_form_login">
+                                <a href="HomePage.html" onclick="hidden_login_and_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>LOGIN</h2>
+                                <form action="Form.php" method="POST">
+                                    <input name="Email" type="text" placeholder="Email" />
+                                    <input name="Password" type="password" placeholder="Password" onclick="testLogin()"/>
+                                </form>
+                                <input type="submit" id="btn_login_id" class="btn_login" name="btn_login" value="LOGIN" onclick="testLogin()" />
+                            </div>
+                            <div class="cont_form_sign_up">
+                                <a href="HomePage.html" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>SIGN UP</h2>
+                                <input type="text" placeholder="Email" />
+                                <input type="text" placeholder="User" />
+                                <input type="password" placeholder="Password" />
+                                <input type="password" placeholder="Confirm Password" />
+                                <input type="submit" id="btn_login_id" class="btn_sign_up" name="btn_login" value="SIGN UP" onclick="testLogin()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="display">
+            <div class="navigation" style="z-index: 100;">
+                <ul>
+                    <li>
+                        <a href="HomePage.html"> <!--Link to the Home page-->
+                            <span class="icon">
+                                <ion-icon name="Home-outline"></ion-icon>
+                            </span>
+                            <span class="title" >Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="TimeTable.html"> <!--Link to the TimeTable page-->
+                            <span class="icon">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">TimeTable</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Discussion/Discussion.php"> <!--Link to the Discussion page-->
+                            <span class="icon">
+                                <ion-icon name="chatbubbles-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">Discussion</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Shared Resources/shared_resources.php"> <!--Link to the Share Resources page-->
+                            <span class="icon">
+                                <ion-icon name="share-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="" >Share Resources</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="About Us.html"> <!--Link to the About us page-->
+                            <span class="icon">
+                                <ion-icon name="help-circle-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="" style="padding-left: -20px;">About us</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="Contact Us.html"> <!--Link to the Contact us page-->
+                            <span class="icon">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">Contact us</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <p style = "text-align: center;">
+        <video controls muted autoplay loop id="TestPic">
+            <source src="Stylesheet/CTU First draft.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </p>
+
+    <div1 class="container" >
+        <img src = "Stylesheet/TimeTable2.jpeg.jpg" alt="Picture of a timeatable" class="Himage" style="position: relative; right: 0%;"/>
+        <p class = "Htext">
+            Timetable is perfect for all your scheduling needs.<br>
+            You can find weekly timetables for all your subjects.<br>
+            Including tests and an exam timeatable. <br>Never miss an exam again!
+        </p>       
+    </div1>
+    <div2 class="container" >
+            <p class = "Htext2">
+            The discussion platform allows you interact with other students. <br>
+            Allowing you to have indepth discussion about subject specific <br>
+            questions or just a place to spill the latest tea.
+            </p>
+            <img src = "Stylesheet/DGpic.png" alt="Picture of a discussion" class="Himage2" style="position: relative; left: 0%;"/>
+    </div2>
+    <div3 class="container">
+            <img src = "Stylesheet/Cloud.jpg" alt="Picture of a floating Cloud" class="Himage" style="position: relative; right: 5%;"/>
+            <p class="Htext">
+            Sharing ideas, notes and whatever else you would like with <br> share resources page.
+            A safe place to store your work to keep it safe, <br> or just store get rid of the old school flash drive. 
+            </p>
+    </div3>
+    <div4 class="container" style="padding-bottom: 5%;">
+        <p class = "Htext2">
+            Join the group of students getting the most out of student life<br>
+        </p>       
+            <img src = "Stylesheet/contact-pages2.png" alt="Picture of a fingure pointing at an @" class="Himage3" style="position: relative; left:0%;"/>
+    </div4>
+
+    <footer class="Hfooter" style="width: 100%;">
+        <div class="Hfooter-content">
+            <div class="footer-section2">
+                <h3 style="position: absolute; left: 12.9%; top: -3%;">
+                    Navigation
+                </h3>
+                <nav>
+                    <ul class="space">
+                        <li><a href="HomePage.html">Home</a></li>
+                        <li><a href="TimeTable.html">Timetable</a></li>
+                        <li><a href="Discussion/Discussion.php">Discussion</a></li>
+                        <br>
+                        <li><a href="Shared Resources/shared_resources.php">Shared Resources</a></li>
+                        <li><a href="About Us.html">About us</a></li>
+                        <li><a href="Contact Us.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="Lfooter-section2">
+                <h3>
+                    Location
+                </h3>
+                <p>
+                    CTU Buddy 1st Floor, Pretty Suites Office Block,
+                    <br> Pretty Gardens Lifestyle Centre, Du Plessis Road,
+                    <br> Langenhoven Park, Bloemfontein
+                </p>
+                <P>
+                    South Africa
+                </p>
+                <p id="Text">
+                    &copy; 2023 Secret Agent Benjamin Sandwhich. All rights reserved.
+                </p>
+            </div>
+            <div class="footer-section2">
+                <h3 style="position: absolute; right: 14.5%;">
+                    Connect
+                </h3>
+                <ul class="social">
+                    <li class="reddit">
+                        <a href="https://www.reddit.com/r/CTUBuddyTHING/">
+                            <i class="fa fa-reddit" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://twitter.com/SecretAgentBeni">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="linkedin">
+                        <a href="http://www.linkedin.com/in/benjamin-undefined-a09a57285">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Show/hide login overlay when the login button is clicked
+        function toggleLogin() {
+            const loginOverlay = document.getElementById('loginOverlay');
+            loginOverlay.style.visibility = "visible";
+        }
+        
+        // Handle login form submission
+        function handleLogin(event) {
+            event.preventDefault();
+            // Perform login logic here (e.g., redirect to home page)
+            window.location.href = "Homepage.html"; // Redirect to home page
+            return false;
+        }
+
+        // JavaScript to handle navigation opening and closing
+        const navigation = document.querySelector('.navigation');
+        const navigationIcons = document.querySelectorAll('.navigation ul li');
+        
+        navigationIcons.forEach((icon) => {
+            icon.addEventListener('mouseover', () => {
+                navigation.classList.add('active');
+            });
+            
+            icon.addEventListener('mouseout', () => {
+                navigation.classList.remove('active');
+            });
+        });
+
+        /* ------------------------------------ Click on login and Sign Up to  changue and view the effect---------------------------------------*/
+        const time_to_show_login = 400;
+        const time_to_hidden_login = 200;
+
+        function change_to_login() {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
+            document.querySelector('.cont_form_login').style.display = "block";
+            document.querySelector('.cont_form_sign_up').style.opacity = "0";
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_login').style.opacity = "1"; 
+            },time_to_show_login);
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_sign_up').style.display = "none";
+            },time_to_hidden_login);
+        }
+
+        const time_to_show_sign_up = 100;
+        const time_to_hidden_sign_up = 400;
+
+        function change_to_sign_up() {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+            document.querySelector('.cont_form_sign_up').style.display = "block";
+            document.querySelector('.cont_form_login').style.opacity = "0";
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_sign_up').style.opacity = "1";
+            },time_to_show_sign_up);
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_login').style.display = "none";
+            },time_to_hidden_sign_up);
+        }
+
+        const time_to_hidden_all = 500;
+
+        function hidden_login_and_sign_up() {
+            document.querySelector('.cont_forms').className = "cont_forms";
+            document.querySelector('.cont_form_sign_up').style.opacity = "0";
+            document.querySelector('.cont_form_login').style.opacity = "0";
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_sign_up').style.display = "none";
+                document.querySelector('.cont_form_login').style.display = "none";
+            },time_to_hidden_all);
+        }
+
+        document.getElementsById('btn_login_id').addEventListener('click', testLogin);
+
+        function testLogin()
+        {
+            window.location.href = "HomePage.html";
+        }
+    </script>
+</body>
+</html>

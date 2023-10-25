@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="Stylesheet/Full_Stylesheet.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>
+            Contact Us page
+        </title>
+        
+    </head>
+
+    <style>
+        body{
+            min-height: 300vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #FormH1 {
+            color: white;
+            font-size: 32pt;
+            padding-top: 8%;
+        }
+        
+        #FormH3 {
+            color: aqua;
+            font-size: 50px;
+            font-family: "Trade Gothic Next";
+            position: absolute;
+            left: 11%;
+            top: 90%;
+        }
+        
+        #EmailAddress {
+            font-size:22px;
+            position: absolute;
+            left: 15%;
+            top: 37%;
+            color: aqua;
+        }
+        
+        #Adress {
+            padding: 0;
+            color: aqua;
+            text-decoration: none;
+            position: absolute;
+            left: 15%;
+            top: 52%;
+        }
+        
+        #PhysicalAdress{
+            font-size: 22px;
+            position: absolute;
+            left: 15%;
+            top: 45%;
+            color: aqua;
+        }
+        
+        #SocialMedia{
+            font-size: 22px;
+            position: absolute;
+            left: 15%;
+            top: 60%;
+            color: aqua;
+        }
+        
+        #Twitter {
+            color: aqua;
+            position: absolute;
+            left: 15%;
+            top: 66%;
+        }
+    
+        #Linkdin {
+            color: aqua;
+            position: absolute;
+            left: 15%;
+            top: 69%;
+        }
+    
+        #Reddit {
+            color: aqua;
+            position: absolute;
+            left: 15%;
+            top: 72%;
+        }
+    
+        .Ttooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+
+        }
+    
+        .Ttooltip::after {
+            content: "SecretAgentBeni";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    
+        .Ttooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        .Ltooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+    
+        .Ltooltip::after {
+            content: "benjamin";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    
+        .Ltooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        .Rtooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+    
+        .Rtooltip::after {
+            content: "CTUBuddyTHING";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    
+        .Rtooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #Phone {
+            color: aqua;
+            font-size: 22px;
+            position: absolute;
+            left: 15%;
+            top: 75%;
+        }
+    
+        #Number {
+            color: aqua;
+            position: absolute;
+            left: 15%;
+            top: 80%;
+        }
+    
+        #name{
+            position: absolute;
+            left: 15%;
+            top: 108%;
+            background-color: rgb(21,27,31);
+            color: white
+        }
+    
+        #email{
+            position: absolute;
+            left: 15%;
+            top: 112%;
+            background-color: rgb(21,27,31);
+            color: whitesmoke
+        }
+    
+        #Textbox {
+            width: 16.7%;
+            resize: none;
+            position: absolute;
+            left: 15%;
+            top:117%;
+            background-color: rgb(21,27,31);
+            color: white
+        }
+        
+        #Submit{
+            font-family: Trade Gothic Next;
+            position: absolute;
+            left: 15%;
+            top: 150%;
+            background-color: rgb(21,27,31);
+            color: whitesmoke
+        }
+        
+        .Map {
+            width: 450px;
+            height: 300px;
+            border-radius: 4px;
+            border-color: aqua;
+            padding: 10px;
+            position: relative;
+            left: 30%;
+        }
+        
+        #email1 {
+            font-family:Trade Gothic Next;
+            position: absolute;
+            left: 15%;
+            top: 43%;
+            color: aqua;
+        }
+    
+    .center {
+        display: block;            
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 10%;
+    }
+
+    .Flip-Box{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 80px auto;
+        perspective: 1000px;
+    }
+    
+    .card {
+        position: absolute;
+        top: 90%;
+        left: 41.76%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 3px;
+        box-shadow: 1px 5px 13px 2px rgba(0,0,0,0.3);
+        color: #fff;
+        text-align: center;
+        backface-visibility: hidden;
+        transition: transform .5s ease-in-out;
+        transform-style: preserve-3d;
+    }
+
+    .flipbox-front {
+        transform: rotateY(0deg);
+        background: url("Stylesheet/Johnathan2.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    .flipbox-back {
+        transform: rotateY(180deg);
+        padding: 10px;
+        font-size: 24px;
+        line-height: 1.5;
+        background: linear-gradient(to bottom right, orange, hotpink, indigo,blue);
+    }
+
+    .flipbox:hover .flipbox-front {
+        transform: rotateY(-180deg);
+    }
+
+    .flipbox:hover .flipbox-back {
+        transform: rotateY(0deg);
+    }
+
+    .Flip-Box1{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 80px auto;
+        perspective: 1000px;
+    }
+    
+    .card1{
+        position: absolute;
+        top: 90%;
+        left: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 3px;
+        box-shadow: 1px 5px 13px 2px rgba(0,0,0,0.3);
+        color: #fff;
+        text-align: center;
+        backface-visibility: hidden;
+        transition: transform .5s ease-in-out;
+        transform-style: preserve-3d;
+    }
+
+    .flipbox-front1{
+        transform: rotateY(0deg);
+        background: url("Stylesheet/Devon2.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    .flipbox-back1{
+        transform: rotateY(180deg);
+        padding: 10px;
+        font-size: 24px;
+        line-height: 1.5;
+        background:linear-gradient(to bottom left, orange, hotpink, indigo,blue);
+    }
+
+    .flipbox1:hover .flipbox-front1{
+        transform: rotateY(-180deg);
+    }
+
+    .flipbox1:hover .flipbox-back1{
+        transform: rotateY(0deg);
+    }
+
+    .Flip-Box2{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 80px auto;
+        perspective: 1000px;
+    }
+    
+    .card2 {
+        position: absolute;
+        top: 130%;
+        left: 41.76%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 3px;
+        box-shadow: 1px 5px 13px 2px rgba(0,0,0,0.3);
+        color: #fff;
+        text-align: center;
+        backface-visibility: hidden;
+        transition: transform .5s ease-in-out;
+        transform-style: preserve-3d;
+    }
+
+    .flipbox-front2 {
+        transform: rotateY(0deg);
+        background: url("Stylesheet/RJ2.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    .flipbox-back2 {
+        transform: rotateY(180deg);
+        padding: 10px;
+        font-size: 24px;
+        line-height: 1.5;
+        background: linear-gradient(to top right, orange, hotpink, indigo,blue)
+    }
+
+    .flipbox2:hover .flipbox-front2 {
+        transform: rotateY(-180deg);
+    }
+
+    .flipbox2:hover .flipbox-back2{
+        transform: rotateY(0deg);
+    }
+
+    .Flip-Box3{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 80px auto;
+        perspective: 1000px;
+    }
+    
+    .card3{
+        position: absolute;
+        top: 130%;
+        left: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 3px;
+        box-shadow: 1px 5px 13px 2px rgba(0,0,0,0.3);
+        color: #fff;
+        text-align: center;
+        backface-visibility: hidden;
+        transition: transform .5s ease-in-out;
+        transform-style: preserve-3d;
+    }
+
+    .flipbox-front3{
+        transform: rotateY(0deg);
+        background: url("Stylesheet/Stefan2.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    .flipbox-back3{
+        transform: rotateY(180deg);
+        padding: 10px;
+        font-size: 24px;
+        line-height: 1.5;
+        background: linear-gradient(to top left, orange, hotpink, indigo,blue);
+    }
+
+    .flipbox3:hover .flipbox-front3{
+        transform: rotateY(-180deg);
+    }
+
+    .flipbox3:hover .flipbox-back3{
+        transform: rotateY(0deg);
+    }
+    #surname {
+        color:greenyellow;
+    }
+    </style>
+
+    <body>
+        
+    <header>
+        <a href="HomePage.html">
+            <img src="Stylesheet/CTU buddy Corner.png" alt="Your Website Logo" class="logo">
+        </a>
+
+        <button type="button" class="login-btn" onclick="toggleLogin()">Login</button>
+        <div class="login-overlay" id="loginOverlay">
+            <div class="cotn_principal">
+                <div class="cont_centrar">
+                    <div class="cont_login">
+                        <div class="cont_info_log_sign_up">
+                            <div class="col_md_login">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>LOGIN</h2>
+                                    <button class="btn_login" onclick="change_to_login()">LOGIN</button>
+                                </div>
+                            </div>
+                            <div class="col_md_sign_up">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>SIGN UP</h2>
+                                    <button class="btn_sign_up" onclick="change_to_sign_up()">SIGN UP</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cont_back_info">
+                            <div class="cont_img_back_grey">
+                                <img src="Stylesheet/backtin.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="cont_forms" >
+                            <div class="cont_img_back_">
+                                <img src="Stylesheet/backtin.jpg" alt="" />
+                            </div>
+                            <div class="cont_form_login">
+                                <a href="About Us.html" onclick="hidden_login_and_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>LOGIN</h2>
+                                <input type="text" placeholder="Email" />
+                                <input type="password" placeholder="Password" onclick="testLogin()"/>
+                                <input type="submit" id="btn_login_id" class="btn_login" name="btn_login" value="LOGIN" onclick="testLogin()" />
+                            </div>
+                            <div class="cont_form_sign_up">
+                                <a href="About Us.html" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>SIGN UP</h2>
+                                <input type="text" placeholder="Email" />
+                                <input type="text" placeholder="User" />
+                                <input type="password" placeholder="Password" />
+                                <input type="password" placeholder="Confirm Password" />
+                                <input type="submit" id="btn_login_id" class="btn_sign_up" name="btn_login" value="SIGN UP" onclick="testLogin()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="display">
+            <div class="navigation" style="z-index: 100;">
+                <ul>
+                    <li>
+                        <a href="HomePage.html"> <!--Link to the Home page-->
+                            <span class="icon">
+                                <ion-icon name="Home-outline"></ion-icon>
+                            </span>
+                            <span class="title" >Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="TimeTable.html"> <!--Link to the TimeTable page-->
+                            <span class="icon">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">TimeTable</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Discussion/Discussion.php"> <!--Link to the Discussion page-->
+                            <span class="icon">
+                                <ion-icon name="chatbubbles-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">Discussion</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Shared Resources/shared_resources.php"> <!--Link to the Share Resources page-->
+                            <span class="icon">
+                                <ion-icon name="share-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="" >Share Resources</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="About Us.html"> <!--Link to the About us page-->
+                            <span class="icon">
+                                <ion-icon name="help-circle-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="" style="padding-left: -20px;">About us</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="Contact Us.html"> <!--Link to the Contact us page-->
+                            <span class="icon">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
+                            </span>
+                            <span class="title" data-title="">Contact us</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <script>
+        // Show/hide login overlay when the login button is clicked
+        function toggleLogin() {
+            const loginOverlay = document.getElementById('loginOverlay');
+            loginOverlay.style.visibility = "visible";
+        }
+        
+        // Handle login form submission
+        function handleLogin(event) {
+            event.preventDefault();
+            // Perform login logic here (e.g., redirect to home page)
+            window.location.href = "Homepage.html"; // Redirect to home page
+            return false;
+        }
+
+        // JavaScript to handle navigation opening and closing
+        const navigation = document.querySelector('.navigation');
+        const navigationIcons = document.querySelectorAll('.navigation ul li');
+        
+        navigationIcons.forEach((icon) => {
+            icon.addEventListener('mouseover', () => {
+                navigation.classList.add('active');
+            });
+            
+            icon.addEventListener('mouseout', () => {
+                navigation.classList.remove('active');
+            });
+        });
+
+        /* ------------------------------------ Click on login and Sign Up to  changue and view the effect---------------------------------------*/
+        const time_to_show_login = 400;
+        const time_to_hidden_login = 200;
+
+        function change_to_login() {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
+            document.querySelector('.cont_form_login').style.display = "block";
+            document.querySelector('.cont_form_sign_up').style.opacity = "0";
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_login').style.opacity = "1"; 
+            },time_to_show_login);
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_sign_up').style.display = "none";
+            },time_to_hidden_login);
+        }
+
+        const time_to_show_sign_up = 100;
+        const time_to_hidden_sign_up = 400;
+
+        function change_to_sign_up() {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+            document.querySelector('.cont_form_sign_up').style.display = "block";
+            document.querySelector('.cont_form_login').style.opacity = "0";
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_sign_up').style.opacity = "1";
+            },time_to_show_sign_up);
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_login').style.display = "none";
+            },time_to_hidden_sign_up);
+        }
+
+        const time_to_hidden_all = 500;
+
+        function hidden_login_and_sign_up() {
+            document.querySelector('.cont_forms').className = "cont_forms";
+            document.querySelector('.cont_form_sign_up').style.opacity = "0";
+            document.querySelector('.cont_form_login').style.opacity = "0";
+
+            setTimeout(function(){
+                document.querySelector('.cont_form_sign_up').style.display = "none";
+                document.querySelector('.cont_form_login').style.display = "none";
+            },time_to_hidden_all);
+        }
+
+        document.getElementsById('btn_login_id').addEventListener('click', testLogin);
+
+        function testLogin()
+        {
+            window.location.href = "HomePage.html";
+        }
+
+        function SubmitAlert() {
+        alert("Thank you for your interest in messaging us. Unfortunately this feature is still in development. We apologize for any inconvenience this may cause. ");
+}
+    </script>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+        <p id="FormH1">
+            Get in Touch
+        </p><br>
+
+        <div id="FormH3">
+            <h3 style="color: aqua; font-size: 30px;">
+                Submit any enquiries, <br>suggestions or feedback below<br>
+            </h3>
+        </div>
+
+        <div>
+            <h3 id="EmailAddress">
+                Email Adress<br>
+            </h3>
+            <p id="Adress">CTU Buddy
+                1st Floor, Pretty Suites Office Block, <br> Pretty Gardens Lifestyle Centre, Du Plessis Road, <br> Langenhoven Park, Bloemfontein, 9330</a>   
+            </p><br>
+            <p>
+                
+                <a href="mailto:secretagentbenjaminsandwich@gmail.com" id="email1" style = "text-decoration: none; font-family: Trade Gothic Next;">secretagentbenjaminsandwich@gmail.com</a><br>
+            </p><br>
+            <h3 id="PhysicalAdress">Physical Adress</h3>
+            <br>
+            <h3 id="SocialMedia">Social Media</h3>
+            <p><br>
+                <a href="https://twitter.com/SecretAgentBeni"id="Twitter" style = "text-decoration: none; font-family: Trade Gothic Next;" class="Ttooltip">Twitter</a>
+            </p>
+            <p>
+                <a href="http://www.linkedin.com/in/benjamin-undefined-a09a57285"id="Linkdin" style = "text-decoration: none; font-family: Trade Gothic Next;" class="Ltooltip">Linkdin</a>
+            </p>
+            <p>
+                <a href="https://www.reddit.com/r/CTUBuddyTHING/"id="Reddit" style = "text-decoration: none; font-family: Trade Gothic Next;" class="Rtooltip">Reddit</a>
+            </p>
+            <h3 id="Phone">
+                Phone
+            </h3>
+            <p id="Number">
+                +27 69 420 0911
+            </p>
+        </div>
+        
+        <div>
+            <form>
+                <input type="text" size = "30" id="name" name="name" placeholder="Name " required><br>
+                <input type="email" id="email" name="email" placeholder = "Email" required><br>
+                <textarea id="Textbox" name="message" rows="8" placeholder="Add comments here..." required></textarea><br>
+
+            <input onclick="SubmitAlert()" type="submit" value="Submit"id="Submit">
+            </form>
+        </div> 
+        
+        <div>
+            <iframe title="google maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1743.378748986645!2d26.157242571679458!3d-29.083310121506777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8fdb6a5867b92b%3A0x6a68f1ae264ac9e!2sCTU%20Training%20Solutions%20Bloemfontein!5e0!3m2!1sen!2sza!4v1690212423652!5m2!1sen!2sza"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="Map"></iframe>
+        </div>
+
+        <div class="flipbox">
+            <div class="card flipbox-front">
+            </div>
+            <div class="card flipbox-back">
+                <p>Jonathan Van Eyssen <br> 20231348 <br> SecretAgent<br>BenjaminSandwich</p>
+            </div>
+        </div>
+        <div class="flipbox1">
+            <div class="card1 flipbox-front1"></div>
+            <div class="card1 flipbox-back1">
+                <p>Devon De Koker <br> 10477 <br> SecretAgent<br>BenjaminSandwich </p>
+            </div>
+        </div>
+        <div class="flipbox2">
+            <div class="card2 flipbox-front2"></div>
+            <div class="card2 flipbox-back2">
+                <p>Rj Van Der Merwe <br> 20231102 <br> SecretAgent<br>BenjaminSandwich</p>
+            </div>
+        </div>
+        <div class="flipbox3">
+            <div class="card3 flipbox-front3"></div>
+            <div class="card3 flipbox-back3">
+                <p>Stefan De Bruin<br> 20230555 <br> SecretAgent<br>BenjaminSandwich </p>
+            </div>
+        </div>
+        <img src="Stylesheet/Floor plan Final.png" style="position: absolute; top: 175%; align-self: center;" alt="Low and Behold an image of the floor plan">
+        <footer class="Hfooter" style="width: 100%;">
+            <div class="Hfooter-content">
+                <div class="footer-section2">
+                    <h3 style="position: absolute; left: 12.9%; top: -3%;">
+                        Navigation
+                    </h3>
+                    <nav>
+                        <ul class="space">
+                            <li><a href="HomePage.html">Home</a></li>
+                            <li><a href="TimeTable.html">Timetable</a></li>
+                            <li><a href="Discussion/Discussion.php">Discussion</a></li>
+                            <br>
+                            <li><a href="Shared Resources/shared_resources.php">Shared Resources</a></li>
+                            <li><a href="About Us.html">About us</a></li>
+                            <li><a href="Contact Us.html">Contact us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="Lfooter-section2">
+                    <h3>
+                        Location
+                    </h3>
+                    <p>
+                        CTU Buddy 1st Floor, Pretty Suites Office Block,
+                        <br> Pretty Gardens Lifestyle Centre, Du Plessis Road,
+                        <br> Langenhoven Park, Bloemfontein
+                    </p>
+                    <P>
+                        South Africa
+                    </p>
+                    <p id="Text">
+                        &copy; 2023 Secret Agent Benjamin Sandwich. All rights reserved.
+                    </p>
+                </div>
+                <div class="footer-section2">
+                    <h3 style="position: absolute; right: 14.5%;">
+                        Connect
+                    </h3>
+                    <ul class="social">
+                        <li class="reddit">
+                            <a href="https://www.reddit.com/r/CTUBuddyTHING/">
+                                <i class="fa fa-reddit" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="https://twitter.com/SecretAgentBeni">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="linkedin">
+                            <a href="http://www.linkedin.com/in/benjamin-undefined-a09a57285">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

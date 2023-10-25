@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="Stylesheet/Full_Stylesheet.css">
+        
+        
+        <title>
+            About us page
+        </title>
+        <style>
+            #AUVision {
+            text-align: center; 
+            color: aqua;
+            position: absolute;
+            top: 45%;
+            left: 30%;
+        }
+          body{
+            min-height: 390vh;
+            display: flex;
+            flex-direction: column;
+        }
+          
+          #AUMission {
+            text-align: center; 
+            color: aqua;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+          }
+          
+          #P4 {
+            position: absolute;
+            left: 19%;
+            top: 55%;
+            font-family:"Engravers MT", cursive;
+            font-size: 18pt;
+            color: rgb(255, 255, 255);
+          }
+        
+          #name1 {
+      position: absolute;
+      left: 32.5%;
+      top: 70%;
+      font-family:"Engravers MT", cursive;
+      font-size: 18pt;
+      color: rgb(255, 255, 255);
+    }
+
+  .image1 {
+    flex-basis: 20%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: -70%;
+    left: -14%;
+    border-radius: 10%;
+    }
+
+  /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  .flip-box {
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 70%;
+    left: 14%;
+    border:blue;
+    border-radius: 10%;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Style the front side */
+.flip-box-front {
+/*    background-image: url(Johnathan.jpg);*/
+    position: absolute;
+    top: 70%;
+    left:14%;
+    border-radius: 10%;
+    color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+    background-color: transparent;
+    border: 5px solid black;
+    border-radius: 10%;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 24px;
+    line-height: 45px;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+  #IPN1 {
+    position: absolute;
+    left: 32.5%;
+    top: 77%;
+    font-family:"Engravers MT", cursive;
+    font-size: 18pt;
+    color: aqua;
+  }
+
+  #name2 {
+    position: absolute;
+    right: 38.5%;
+    top: 130%;
+    font-family:"Engravers MT", cursive;
+    font-size: 18pt;
+    color: rgb(255, 255, 255);
+  }
+
+  .image2 {
+    flex-basis: 20%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: -130%;
+    right: -20.5%;
+    border-radius: 10%;
+  }
+
+    /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-box2 {
+      background-color: transparent;
+      width: 250px;
+      height: 250px;
+      position: absolute;
+      top: 130%;
+      right: 20.5%;
+      border:blue;
+      border-radius: 10%;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner2 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box2:hover .flip-box-inner2 {
+      transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front2, .flip-box-back2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front2 {
+  /*    background-image: url(Johnathan.jpg);*/
+      position: absolute;
+      top: 130%;
+      right:20.5%;
+      border-radius: 10%;
+      color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back2 {
+      background-color: transparent;
+      border: 5px solid black;
+      border-radius: 10%;
+      color: white;
+      transform: rotateY(180deg);
+      font-size: 22px;
+      line-height: 45px;
+      text-shadow: 2px 2px 5px #000000;
+  }  
+
+  #IPN2 {
+    position: absolute;
+    right: 38.5%;
+    top: 137%;
+    font-family:"Engravers MT", cursive;
+    font-size: 18pt;
+    color: aqua;
+  }
+
+  #name3 {
+    position: absolute;
+    left: 32.5%;
+    top: 187%;
+    font-family:"Engravers MT", cursive;
+    font-size: 18pt;
+    color: rgb(255, 255, 255);
+  }
+
+  .image3 {
+    flex-basis: 20%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: -187%;
+    left: -14%;
+    border-radius: 10%;
+  }
+
+    /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-box3 {
+      background-color: transparent;
+      width: 250px;
+      height: 250px;
+      position: absolute;
+      top: 187%;
+      left: 14%;
+      border:blue;
+      border-radius: 10%;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner3 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box3:hover .flip-box-inner3 {
+      transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front3, .flip-box-back3 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front3 {
+  /*    background-image: url(Johnathan.jpg);*/
+      position: absolute;
+      top: 187%;
+      left:14%;
+      border-radius: 10%;
+      color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back3 {
+      background-color: transparent;
+      border: 5px solid aqua;
+      border-radius: 10%;
+      color: white;
+      transform: rotateY(180deg);
+      font-size: 24px;
+      line-height: 45px;
+      text-shadow: 2px 2px 5px #000000;
+  }  
+
+  #IPN3 {
+    position: absolute;
+    left: 32.5%;
+    top: 194%;
+    font-family:"Engravers MT", cursive;
+    font-size: 18pt;
+    color: aqua;
+  }
+  #name4 {
+    position: absolute;
+    right: 38.5%;
+    top: 245%;
+    font-family:"Engravers MT", cursive;
+    font-size: 18pt;
+    color: rgb(255, 255, 255);
+  }
+
+  .image4 {
+    flex-basis: 20%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: -0%;
+    right: -20.5%;
+    border-radius: 10%;
+  }
+
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box4 {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 245%;
+  right: 20.5%;
+  border:blue;
+  border-radius: 10%;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner4 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box4:hover .flip-box-inner4 {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front4, .flip-box-back4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side */
+.flip-box-front4 {
+/*    background-image: url(Johnathan.jpg);*/
+  position: absolute;
+  top: 0%;
+  right: 20.5%;
+  border-radius: 10%;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back4 {
+  background-color: transparent;
+  border: 5px solid black;
+  border-radius: 10%;
+  color: white;
+  transform: rotateY(180deg);
+  font-size: 24px;
+  line-height: 45px;
+  text-shadow: 2px 2px 5px #000000;
+}  
+
+  #IPN4 {
+    position: absolute;
+    right: 38.5%;
+    top: 252%;
+    font-family:"Engravers MT", cursive;
+    font-size: 18pt;
+    color: aqua;
+  }
+
+          #he1 {
+            position: absolute;
+            left: 42.2%;
+            top: 15%;
+            font-family:"Engravers MT", cursive;
+            color: rgb(255, 255, 255);
+          }
+        
+          #P1 {
+            position: absolute;
+            left: 42.5%;
+            top: 40%;
+            font-family:"Engravers MT", cursive;
+            font-size: 18pt;
+            color:rgb(255, 255, 255) ;
+          }
+        
+          #P2 {
+            position: absolute;
+            left: 41.8%;
+            top: 25%;
+            font-family:"Engravers MT", cursive;
+            font-size: 18pt;
+            color: rgb(255, 255, 255);
+          }
+        
+          #P3 {
+            position: absolute;
+            left: 40.5%;
+            top: 55%;
+            font-family:"Engravers MT", cursive;
+            font-size: 18pt;
+            color: rgb(255, 255, 255);
+          }
+          
+                </style>
+    </head>
+
+    <style>
+    html {
+        background-image: url(Stylesheet/backtin.jpg);
+        }
+        </style>
+
+    <body>
+        <header>
+            <a href="HomePage.html">
+                <img src="Stylesheet/CTU buddy Corner.png" alt="Your Website Logo" class="logo">
+            </a>
+    
+            <button type="button" class="login-btn" onclick="toggleLogin()">Login</button>
+            <div class="login-overlay" id="loginOverlay">
+                <div class="cotn_principal">
+                    <div class="cont_centrar">
+                        <div class="cont_login">
+                            <div class="cont_info_log_sign_up">
+                                <div class="col_md_login">
+                                    <div class="cont_ba_opcitiy">
+                                        <h2>LOGIN</h2>
+                                        <button class="btn_login" onclick="change_to_login()">LOGIN</button>
+                                    </div>
+                                </div>
+                                <div class="col_md_sign_up">
+                                    <div class="cont_ba_opcitiy">
+                                        <h2>SIGN UP</h2>
+                                        <button class="btn_sign_up" onclick="change_to_sign_up()">SIGN UP</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cont_back_info">
+                                <div class="cont_img_back_grey">
+                                    <img src="Stylesheet/backtin.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="cont_forms" >
+                                <div class="cont_img_back_">
+                                    <img src="Stylesheet/backtin.jpg" alt="" />
+                                </div>
+                                <div class="cont_form_login">
+                                    <a href="About Us.html" onclick="hidden_login_and_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                                    <h2>LOGIN</h2>
+                                    <input type="text" placeholder="Email" />
+                                    <input type="password" placeholder="Password" onclick="testLogin()"/>
+                                    <input type="submit" id="btn_login_id" class="btn_login" name="btn_login" value="LOGIN" onclick="testLogin()" />
+                                </div>
+                                <div class="cont_form_sign_up">
+                                    <a href="About Us.html" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                                    <h2>SIGN UP</h2>
+                                    <input type="text" placeholder="Email" />
+                                    <input type="text" placeholder="User" />
+                                    <input type="password" placeholder="Password" />
+                                    <input type="password" placeholder="Confirm Password" />
+                                    <input type="submit" id="btn_login_id" class="btn_sign_up" name="btn_login" value="SIGN UP" onclick="testLogin()" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="display">
+                <div class="navigation" style="z-index: 100;">
+                    <ul>
+                        <li>
+                            <a href="HomePage.html"> <!--Link to the Home page-->
+                                <span class="icon">
+                                    <ion-icon name="Home-outline"></ion-icon>
+                                </span>
+                                <span class="title" >Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="TimeTable.html"> <!--Link to the TimeTable page-->
+                                <span class="icon">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                </span>
+                                <span class="title" data-title="">TimeTable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Discussion/Discussion.php"> <!--Link to the Discussion page-->
+                                <span class="icon">
+                                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                                </span>
+                                <span class="title" data-title="">Discussion</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Shared Resources/shared_resources.php"> <!--Link to the Share Resources page-->
+                                <span class="icon">
+                                    <ion-icon name="share-outline"></ion-icon>
+                                </span>
+                                <span class="title" data-title="" >Share Resources</span>
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="About Us.html"> <!--Link to the About us page-->
+                                <span class="icon">
+                                    <ion-icon name="help-circle-outline"></ion-icon>
+                                </span>
+                                <span class="title" data-title="" style="padding-left: -20px;">About us</span>
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="Contact Us.html"> <!--Link to the Contact us page-->
+                                <span class="icon">
+                                    <ion-icon name="phone-portrait-outline"></ion-icon>
+                                </span>
+                                <span class="title" data-title="">Contact us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <script>
+            // Show/hide login overlay when the login button is clicked
+            function toggleLogin() {
+                const loginOverlay = document.getElementById('loginOverlay');
+                loginOverlay.style.visibility = "visible";
+            }
+            
+            // Handle login form submission
+            function handleLogin(event) {
+                event.preventDefault();
+                // Perform login logic here (e.g., redirect to home page)
+                window.location.href = "Homepage.html"; // Redirect to home page
+                return false;
+            }
+      
+            // JavaScript to handle navigation opening and closing
+            const navigation = document.querySelector('.navigation');
+            const navigationIcons = document.querySelectorAll('.navigation ul li');
+            
+            navigationIcons.forEach((icon) => {
+                icon.addEventListener('mouseover', () => {
+                    navigation.classList.add('active');
+                });
+                
+                icon.addEventListener('mouseout', () => {
+                    navigation.classList.remove('active');
+                });
+            });
+      
+            /* ------------------------------------ Click on login and Sign Up to  changue and view the effect---------------------------------------*/
+            const time_to_show_login = 400;
+            const time_to_hidden_login = 200;
+      
+            function change_to_login() {
+                document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
+                document.querySelector('.cont_form_login').style.display = "block";
+                document.querySelector('.cont_form_sign_up').style.opacity = "0";
+      
+                setTimeout(function(){
+                    document.querySelector('.cont_form_login').style.opacity = "1"; 
+                },time_to_show_login);
+      
+                setTimeout(function(){
+                    document.querySelector('.cont_form_sign_up').style.display = "none";
+                },time_to_hidden_login);
+            }
+      
+            const time_to_show_sign_up = 100;
+            const time_to_hidden_sign_up = 400;
+      
+            function change_to_sign_up() {
+                document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+                document.querySelector('.cont_form_sign_up').style.display = "block";
+                document.querySelector('.cont_form_login').style.opacity = "0";
+      
+                setTimeout(function(){
+                    document.querySelector('.cont_form_sign_up').style.opacity = "1";
+                },time_to_show_sign_up);
+      
+                setTimeout(function(){
+                    document.querySelector('.cont_form_login').style.display = "none";
+                },time_to_hidden_sign_up);
+            }
+      
+            const time_to_hidden_all = 500;
+      
+            function hidden_login_and_sign_up() {
+                document.querySelector('.cont_forms').className = "cont_forms";
+                document.querySelector('.cont_form_sign_up').style.opacity = "0";
+                document.querySelector('.cont_form_login').style.opacity = "0";
+      
+                setTimeout(function(){
+                    document.querySelector('.cont_form_sign_up').style.display = "none";
+                    document.querySelector('.cont_form_login').style.display = "none";
+                },time_to_hidden_all);
+            }
+      
+            document.getElementsById('btn_login_id').addEventListener('click', testLogin);
+      
+            function testLogin()
+            {
+                window.location.href = "About Us.html";
+            }
+        </script>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            
+            <script src="Stylesheet/script.js"></script>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+            <h1 id="he1">
+                About Us
+            </h1>
+
+            <p id="P1">
+                Our Vision
+            </p>
+
+            <p id="AUVision">
+                CTU-buddy envisions revolutionizing the educational experience, <br> empowering learners worldwide to realize their full potential through an immersive, <br> user-friendly platform that fosters collaborative learning and academic success
+            </p>
+
+            <p id="P2">
+                Our Mission
+            </p>
+
+            <p id="AUMission">
+                At CTU Buddy, our mission is to provide an immersive, user-friendly platform <br> that enhances learning, fosters collaboration, and promotes academic success for students.
+            </p>
+
+            <p id="P3">
+                Meet The Team
+            </p>
+
+
+            <p id="name1">
+                Jonathan Van Eyssen
+            </p>
+            <div class="flip-box">
+                <div class ="flip-box-inner">
+                <div class ="flip-box-front">
+                    <img src="Stylesheet/Johnathan.jpg" alt="Picture of Johnathan" class="image1" style="z-index: 900;"/><br>
+                </div>
+                <div class="flip-box-back">
+                    <h2>Roles:</h2>
+                    <h3>Home Page<br>Discussion<br>Overall Design<br>Documentation</h3>
+                </div>
+                </div>
+            </div>
+            
+            <p id="IPN1">
+                "I dig, you dig, we dig, they dig..." <br> its not good but its very deep...<br>-Socrates
+            </p>
+            <p id="name2">
+                Devon De Koker
+            </p>
+            <div class="flip-box2">
+                <div class ="flip-box-inner2">
+                <div class ="flip-box-front2">
+                    <img src="Stylesheet/Devon.jpg" alt="Picture of Devon" class="image2"/><br>
+                </div>
+                <div class="flip-box-back2">
+                    <h2>Roles:</h2>
+                        <h3>Timetable Page</h3> <p style="font-size: 18px;"> Resource Sharing Page</p> <h3>Overall Design<br>Navigation</h3>
+                </div>
+                </div>
+            </div>
+            <p id="IPN2">
+                "if you fight me i'll pull down my pants"<br>-King Leonidas's reply to the persians
+            </p>
+            <p id="name3">
+                RJ Van Der Merwe
+            </p>
+            <p id="image3">
+                <div class="flip-box3">
+                    <div class ="flip-box-inner3">
+                    <div class ="flip-box-front3">
+                        <img src="Stylesheet/RJ.jpg" alt="Picture of RJ" class="image3"/><br>
+                    </div>
+                    <div class="flip-box-back3">
+                        <h2>Roles:</h2>
+                            <h3>About Us Page<br>Contact Us Page<br>Overall Design</h3>
+                    </div>
+                    </div>
+                </div>
+            </p>
+            <p id="IPN3">
+                "A rusk is a biscuit"<br>-Winston Churchill
+            </p>
+            <p id="name4">
+                Hermanus Stefanus De Bruin
+            </p>
+            <p id="image4">
+                <div class="flip-box4">
+                    <div class ="flip-box-inner4">
+                    <div class ="flip-box-front4">
+                        <img src="Stylesheet/Stefan.jpg" alt="Picture of Stefan" class="image4"/>
+                    </div>
+                    <div class="flip-box-back4">
+                        <h2>Roles:</h2>
+                        <h3>Header<br>Footer<br>Overall Design<br>Quality Control</h3>
+                    </div>
+                    </div>
+                </div>
+            </p>
+            <p id="IPN4">
+                "I don't mean to brag, but I <br> put together a puzzle in <br> 1 day, even though the box <br> said 2-4 years"<br>-George W. Bush
+            </p>
+
+            <img src="Stylesheet/Organogram.png" style="position: absolute; top: 295%; align-self: center;" alt="">
+
+            <footer class="Hfooter" style="width: 100%;">
+                <div class="Hfooter-content">
+                    <div class="footer-section2">
+                        <h3 style="position: absolute; left: 12.9%; top: -3%;">
+                            Navigation
+                        </h3>
+                        <nav>
+                            <ul class="space">
+                                <li><a href="HomePage.html">Home</a></li>
+                                <li><a href="TimeTable.html">Timetable</a></li>
+                                <li><a href="Discussion/Discussion.php">Discussion</a></li>
+                                <br>
+                                <li><a href="Shared Resources/shared_resources.php">Shared Resources</a></li>
+                                <li><a href="About Us.html">About us</a></li>
+                                <li><a href="Contact Us.html">Contact us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="Lfooter-section2">
+                        <h3>
+                            Location
+                        </h3>
+                        <p>
+                            CTU Buddy 1st Floor, Pretty Suites Office Block,
+                            <br> Pretty Gardens Lifestyle Centre, Du Plessis Road,
+                            <br> Langenhoven Park, Bloemfontein
+                        </p>
+                        <P>
+                            South Africa
+                        </p>
+                        <p id="Text">
+                            &copy; 2023 Secret Agent Benjamin Sandwich. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="footer-section2">
+                        <h3 style="position: absolute; right: 14.5%;">
+                            Connect
+                        </h3>
+                        <ul class="social">
+                            <li class="reddit">
+                                <a href="https://www.reddit.com/r/CTUBuddyTHING/">
+                                    <i class="fa fa-reddit" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="twitter">
+                                <a href="https://twitter.com/SecretAgentBeni">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="linkedin">
+                                <a href="http://www.linkedin.com/in/benjamin-undefined-a09a57285">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+    </body>
+</html>
