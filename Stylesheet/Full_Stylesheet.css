@@ -1,0 +1,1272 @@
+header{
+    height: 100%;
+}
+
+/*App Styles*/
+:root {
+    --background: #5f5f5f;
+    --menu-background: #2f2f2f;
+    --white: #fff;
+    --deepSkyBlue: #00bfff;
+    --close: #FF0000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, Helvetica;
+    font-weight: 600;
+}
+
+/*body {
+    min-height:  auto;
+    justify-content: center;
+    align-items: center;
+}*/
+
+.display{
+    background: transparent;
+    height: 95%;
+    width: 50%;
+}
+
+.icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: var(--deepSkyBlue);
+    font-size: 24px;
+}
+
+.icon ion-icon{
+    font-size: 1.5em;
+}
+
+.title{
+    position: relative;
+    display: block;
+    padding-left: 15px;
+    height: 60px;
+    line-height: 60px;
+    color: var(--deepSkyBlue);
+    opacity: 0.4;
+    font-size: 24px;
+}
+
+.navigation{
+    position: fixed;
+    top: 20%;
+    left: 5%;
+    bottom: 120px;
+    width: 65px;
+    border-radius: 40px;
+    box-sizing: initial;
+    z-index: 9999 !important;
+    background: transparent;
+    transition: width 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width: 350px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 20px;
+    left: -3px;
+    width: 100%;
+    /*padding-left: 5px;*/
+    list-style: none;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 20px;
+}
+
+/**/
+.navigation ul li.active{
+    background: var(--background);
+}
+/**/
+
+.navigation ul li b:nth-child(1){
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background: var(--background);
+    display: none;
+}
+
+.navigation ul li b:nth-child(1)::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background: transparent;
+}
+
+.navigation ul li b:nth-child(2){
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background: var(--background);
+    display: none;
+}
+
+.navigation ul li b:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    background: transparent;
+}
+
+.navigation ul li b:nth-child(1),
+.navigation ul li b:nth-child(2){
+    display: block;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 80%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+/**/
+.navigation ul li.active a{
+    color: var(--deepSkyBlue);
+}
+/**/
+
+/* Add a hover effect to the icons and show the title as a tooltip */
+.navigation ul li a:hover .icon{
+    color: var(--deepSkyBlue); /* Change the color to your desired hover color */
+    /* You can also add other styles or animations here, like scale or rotation */
+}
+
+/* Add a hover effect to the icons and show the title as a tooltip */
+.navigation ul li a:hover .title{
+    color: antiquewhite; /* Change the color to your desired hover color */
+    /* You can also add other styles or animations here, like scale or rotation */
+    opacity: 1;
+}
+
+
+/* Show the title as a tooltip on hover */
+.navigation ul li .title::after{
+    content: attr(data-title); /* Show the title as a tooltip */
+    display: block;
+    position: static;
+    top: -8%;
+    left: 40px;
+    transform: translateX(-10%);
+    background-color: transparent; /* Customize the background color */
+    color: var(--deepSkyBlue);
+    padding: 5px 100px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 999;
+    opacity: 0.9;
+}
+
+.navigation ul li:hover{
+    background-color: transparent;
+}
+
+
+.toggle{
+    position: fixed;
+    top: 40px;
+    right: 384px;
+    width: 50px;
+    height: 50px;
+    background: var(--menu-background);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle.active{
+    background: var(--close);
+}
+
+.toggle ion-icon{
+    position: absolute;
+    color: var(--white);
+    font-size: 34px;
+    display: none;
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.close{
+    display: block;
+}
+
+.toggle ion-icon.close,
+.toggle.active ion-icon.open{
+    display: none;
+}
+
+/*Login*/
+.logo {
+    position: absolute;
+    top: 0%;
+    left: 38%;
+    height: 120px;
+    width: 360px; /* Adjust the width as needed */
+}
+
+.login-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 0%;
+}
+
+/* ------------------------------------
+Click on login and Sign Up to 
+changue and view the effect
+---------------------------------------*/
+
+* {
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.cotn_principal {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd8dc+0,607d8b+100,b0bec5+100 */
+    background: transparent;
+    /*background: #cfd8dc; /* Old browsers
+    background: -moz-linear-gradient(
+    -45deg,
+    #cfd8dc 0%,
+    #607d8b 100%,
+    #b0bec5 100%
+    );  FF3.6-15 */
+    background: transparent;
+    /*background: -webkit-linear-gradient(
+    -45deg,
+    #cfd8dc 0%,
+    #607d8b 100%,
+    #b0bec5 100%
+    );  Chrome10-25,Safari5.1-6 */
+    background: transparent;
+    /*background: linear-gradient(
+    135deg,
+    #cfd8dc 0%,
+    #607d8b 100%,
+    #b0bec5 100%
+    );  W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.cont_centrar {
+    display: flex;
+    align-self: center;
+    width: 100%;
+}
+
+.cont_login {
+    position: relative;
+    width: 640px;
+}
+
+.cont_back_info {
+    position: relative;
+    float: left;
+    width: 640px;
+    height: 280px;
+    overflow: hidden;
+    /*background-color: #fff;*/
+    box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+            .cont_forms {
+            position: absolute;
+            overflow: hidden;
+            top: 0px;
+            left: 0px;
+            width: 320px;
+            height: 280px;
+            background-image: url(backtin.jpg);
+            /*background-color: #eee;*/
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_forms_active_login {
+            box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+            height: 420px;
+            top: -60px;
+            left: 0px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+  
+            .cont_forms_active_sign_up {
+            box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+            height: 420px;
+            top: -60px;
+            left: 320px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+  
+            .cont_img_back_grey {
+            position: absolute;
+            width: 950px;
+            top: -80px;
+            left: -116px;
+            }
+  
+            .cont_img_back_grey > img {
+            width: 100%;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            opacity: 0.2;
+            animation-name: animar_fondo;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            }
+  
+            .cont_img_back_ {
+            position: absolute;
+            width: 950px;
+            top: -80px;
+            left: -116px;
+            }
+  
+            .cont_img_back_ > img {
+            width: 100%;
+            opacity: 0.3;
+            animation-name: animar_fondo;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            }
+  
+            .cont_forms_active_login > .cont_img_back_ {
+            top: -20px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+  
+            .cont_forms_active_sign_up > .cont_img_back_ {
+            top: -20px;
+            left: -435px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+  
+            .cont_info_log_sign_up {
+            position: absolute;
+            width: 640px;
+            height: 280px;
+            top: 0px;
+            z-index: 1;
+            }
+  
+            .col_md_login {
+            position: relative;
+            float: left;
+            width: 50%;
+            }
+  
+            .col_md_login > h2 {
+            font-weight: 400;
+            margin-top: 70px;
+            color: #757575;
+            }
+  
+            .col_md_login > p {
+            font-weight: 400;
+            margin-top: 15px;
+            width: 80%;
+            color: #37474f;
+            }
+  
+            .btn_login {
+            background-color: #26c6da;
+            border: none;
+            padding: 10px;
+            width: 200px;
+            border-radius: 3px;
+            box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            }
+  
+            #btn_login_id
+            {
+                text-align: center;
+                color: #fff;
+            }
+  
+            .col_md_sign_up {
+            position: relative;
+            float: left;
+            width: 50%;
+            }
+  
+            .cont_ba_opcitiy > h2 {
+            font-weight: 400;
+            color: #fff;
+            }
+  
+            .cont_ba_opcitiy > p {
+            font-weight: 400;
+            margin-top: 15px;
+            color: #fff;
+            }
+  
+            /* ----------------------------------
+            background text    
+            ------------------------------------
+            */
+            .cont_ba_opcitiy {
+            position: relative;
+            background-color: rgba(120, 144, 156, 0); /*Block around the Logup Buttons*/
+            width: 80%;
+            border-radius: 3px;
+            margin-top: 60px;
+            padding: 15px 0px;
+            }
+  
+            .btn_sign_up {
+            background-color: #ef5350;
+            border: none;
+            padding: 10px;
+            width: 200px;
+            border-radius: 3px;
+            box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            }
+            .cont_forms_active_sign_up {
+            z-index: 2;
+            }
+  
+            @-webkit-keyframes animar_fondo {
+            from {
+                -webkit-transform: scale(1) translate(0px);
+                -moz-transform: scale(1) translate(0px);
+                -ms-transform: scale(1) translate(0px);
+                -o-transform: scale(1) translate(0px);
+                transform: scale(1) translate(0px);
+            }
+            to {
+                -webkit-transform: scale(1.5) translate(50px);
+                -moz-transform: scale(1.5) translate(50px);
+                -ms-transform: scale(1.5) translate(50px);
+                -o-transform: scale(1.5) translate(50px);
+                transform: scale(1.5) translate(50px);
+            }
+            }
+            @-o-keyframes identifier {
+            from {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+            to {
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+            }
+            @-moz-keyframes identifier {
+            from {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+            to {
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+            }
+            @keyframes identifier {
+            from {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+            to {
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+            }
+            .cont_form_login {
+            position: absolute;
+            opacity: 0;
+            display: none;
+            width: 320px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+  
+            .cont_forms_active_login {
+            z-index: 2;
+            }
+  
+            .cont_form_sign_up {
+            position: absolute;
+            width: 320px;
+            float: left;
+            opacity: 0;
+            display: none;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+  
+            .cont_form_sign_up > input {
+            text-align: left;
+            padding: 15px 5px;
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 260px;
+            border: none;
+            color: #757575;
+            }
+  
+            .cont_form_sign_up > h2 {
+            margin-top: 50px;
+            font-weight: 400;
+            color: #757575;
+            }
+  
+            .cont_form_login > input {
+            padding: 15px 5px;
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 260px;
+            border: none;
+            text-align: left;
+            color: #757575;
+            }
+  
+            .cont_form_login > h2 {
+            margin-top: 110px;
+            font-weight: 400;
+            color: #757575;
+            }
+            .cont_form_login > a,
+            .cont_form_sign_up > a {
+            color: #757575;
+            position: relative;
+            float: left;
+            margin: 10px;
+            margin-left: 30px;
+            }
+
+
+
+html{
+    background-image: url(backtin.jpg);
+}
+
+
+.Hfooter {
+    margin-top: auto;
+    background-size: 100vw;
+    color: #fff;
+    /*padding: 0px;*/
+    text-align: center;
+    /*width: 98.3vw;*/
+    left: 0;
+}
+
+.Hfooter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    top: 40%;
+    overflow: visible;
+    background-position: 0%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    height: 8vw;
+}
+
+.footer-section2 {
+    flex: 1;
+    margin-right: 0px;
+    overflow: hidden;
+}
+
+.Lfooter-section2 {
+    flex: 1;
+    margin-right: 0px;
+    overflow: hidden;
+    position: absolute;
+    left: 38%;
+}
+
+.footer-section2:last-child {
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.footer-section2 h3 {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.footer-section2 p {
+    margin: 0;
+    overflow: hidden;
+    
+}
+
+footer nav {
+    margin-top: 10px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer nav li {
+    display: inline-block;
+    margin-right: 15px; /* Adjust the spacing between navigation links */
+    overflow: hidden;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 0px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    position: absolute;
+    left: -13%;
+    top: -52%;
+    z-index: 1000;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+#Text {
+    font-size: 10pt;
+    margin: 10px;
+    position: relative;
+    top: 50%;
+}
+
+.space{
+    position: absolute;
+    top: 28%;
+    left: 7%;
+}
+
+.social {
+    position: absolute;
+    top: 80%;
+    left: 83.5%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.social li {
+    list-style: none;
+    /*margin: 0 40px;*/
+}
+.social li .fa {
+    font-size: 40px;
+    color: antiquewhite;
+    line-height: 80px;
+    transition: 0.5s;
+}
+.social li a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff00;
+    text-align: center;
+    transform: perspective(100px) rotate(-30deg) skew(25deg) translate(0, 0);
+    transition: 0.5s;
+    box-shadow: -20px 20px 10px rgb(0, 0, 0, 0.5);
+}
+.social li a::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background: #b1b1b100;
+    transition: 0.5s;
+    transform: rotate(0deg) skewY(-45deg);
+}
+.social li a::after {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: -10.6px;
+    height: 20px;
+    width: 100%;
+    background: #b1b1b100;
+    transition: 0.5s;
+    transform: rotate(0deg) skewX(-45deg);
+}
+.social li a:hover {
+    transform: perspective(1000px) rotate(-30deg) skew(25deg)
+    translate(20px, -20px);
+    box-shadow: -50px 50px 50px rgba(160, 12, 12, 0.5);
+}
+.social li:hover .fa {
+    color: #fff;
+}
+.social li a:hover {
+    transform: perspective(1000px) rotate(-30deg) skew(25deg)
+    translate(20px, -20px);
+    box-shadow: -50px 50px 50px rgb(0, 0, 0, 0.5);
+}
+ul .facebook:hover a {
+    background: #3b5999;
+}
+.social .facebook:hover a:before {
+    background: #2e4a86;
+}
+.social .facebook:hover a:after {
+    background: #4a69ad;
+}
+.social .twitter:hover a {
+    background: #55acee;
+}
+.social .twitter:hover a:before {
+    background: #4184b7;
+}
+.social .twitter:hover a:after {
+    background: #4d9fde;
+}
+.social .reddit:hover a {
+    background: #dd4b39;
+}
+.social .reddit:hover a:before {
+    background: #c13929;
+}
+.social .reddit:hover a:after {
+    background: #e83322;
+}
+.social .linkedin:hover a {
+    background: #0077b5;
+}
+.social .linkedin:hover a:before {
+    background: #036aa0;
+}
+.social .linkedin:hover a:after {
+    background: #0d82bf;
+}
+.social .instagram:hover a {
+    background: linear-gradient(#400080, transparent),
+    linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+}
+.social .instagram:hover a:before {
+    background: linear-gradient(#400080, transparent),
+    linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+}
+.social .instagram:hover a:after {
+    background: linear-gradient(#400080, transparent),
+    linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+}
+
+/* Large rounded green border */
+hr.new5 {
+    border: 2px solid green;
+    border-radius: 5px;
+}
+
+            /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
+            ---------------------------------------
+            */
+
+            * {
+                margin: 0px auto;
+                padding: 0px;
+                text-align: center;
+                font-family: "Open Sans", sans-serif;
+            }
+
+            .cotn_principal {
+                position: absolute;
+                width: 100%;
+                display: flex;
+                height: 100%;
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            }
+
+            .cont_centrar {
+                display: flex;
+                align-self: center;
+                width: 100%;
+            }
+
+            .cont_login {
+                position: relative;
+                width: 640px;
+            }
+
+            .cont_back_info {
+                position: relative;
+                float: left;
+                width: 640px;
+                height: 280px;
+                overflow: hidden;
+                /*background-color: #fff;*/
+                box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+            }
+
+            .cont_forms {
+            position: absolute;
+            overflow: hidden;
+            top: 0px;
+            left: 0px;
+            width: 320px;
+            height: 280px;
+            background-image: url(backtin.jpg);
+            /*background-color: #eee;*/
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_forms_active_login {
+            box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+            height: 420px;
+            top: -60px;
+            left: 0px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_forms_active_sign_up {
+            box-shadow: 1px 10px 30px -10px rgba(0, 0, 0, 0.5);
+            height: 420px;
+            top: -60px;
+            left: 320px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_img_back_grey {
+            position: absolute;
+            width: 950px;
+            top: -80px;
+            left: -116px;
+            }
+
+            .cont_img_back_grey > img {
+            width: 100%;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            opacity: 0.2;
+            animation-name: animar_fondo;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            }
+
+            .cont_img_back_ {
+            position: absolute;
+            width: 950px;
+            top: -80px;
+            left: -116px;
+            }
+
+            .cont_img_back_ > img {
+            width: 100%;
+            opacity: 0.3;
+            animation-name: animar_fondo;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            }
+
+            .cont_forms_active_login > .cont_img_back_ {
+            top: -20px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_forms_active_sign_up > .cont_img_back_ {
+            top: -20px;
+            left: -435px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_info_log_sign_up {
+            position: absolute;
+            width: 640px;
+            height: 280px;
+            top: 0px;
+            z-index: 1;
+            }
+
+            .col_md_login {
+            position: relative;
+            float: left;
+            width: 50%;
+            }
+
+            .col_md_login > h2 {
+            font-weight: 400;
+            margin-top: 70px;
+            color: #757575;
+            }
+
+            .col_md_login > p {
+            font-weight: 400;
+            margin-top: 15px;
+            width: 80%;
+            color: #37474f;
+            }
+
+            .btn_login {
+            background-color: #26c6da;
+            border: none;
+            padding: 10px;
+            width: 200px;
+            border-radius: 3px;
+            box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            }
+
+            #btn_login_id
+            {
+                text-align: center;
+                color: #fff;
+            }
+
+            .col_md_sign_up {
+            position: relative;
+            float: left;
+            width: 50%;
+            }
+
+            .cont_ba_opcitiy > h2 {
+            font-weight: 400;
+            color: #fff;
+            }
+
+            .cont_ba_opcitiy > p {
+            font-weight: 400;
+            margin-top: 15px;
+            color: #fff;
+            }
+
+            /* ----------------------------------
+            background text    
+            ------------------------------------
+            */
+            .cont_ba_opcitiy {
+            position: relative;
+            background-color: rgba(120, 144, 156, 0); /*Block around the Logup Buttons*/
+            width: 80%;
+            border-radius: 3px;
+            margin-top: 60px;
+            padding: 15px 0px;
+            }
+
+            .btn_sign_up {
+            background-color: #ef5350;
+            border: none;
+            padding: 10px;
+            width: 200px;
+            border-radius: 3px;
+            box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            }
+            .cont_forms_active_sign_up {
+            z-index: 2;
+            }
+
+            @-webkit-keyframes animar_fondo {
+            from {
+                -webkit-transform: scale(1) translate(0px);
+                -moz-transform: scale(1) translate(0px);
+                -ms-transform: scale(1) translate(0px);
+                -o-transform: scale(1) translate(0px);
+                transform: scale(1) translate(0px);
+            }
+            to {
+                -webkit-transform: scale(1.5) translate(50px);
+                -moz-transform: scale(1.5) translate(50px);
+                -ms-transform: scale(1.5) translate(50px);
+                -o-transform: scale(1.5) translate(50px);
+                transform: scale(1.5) translate(50px);
+            }
+            }
+            @-o-keyframes identifier {
+            from {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+            to {
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+            }
+            @-moz-keyframes identifier {
+            from {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+            to {
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+            }
+            @keyframes identifier {
+            from {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+            to {
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+            }
+            .cont_form_login {
+            position: absolute;
+            opacity: 0;
+            display: none;
+            width: 320px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_forms_active_login {
+            z-index: 2;
+            }
+
+            .cont_form_sign_up {
+            position: absolute;
+            width: 320px;
+            float: left;
+            opacity: 0;
+            display: none;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            }
+
+            .cont_form_sign_up > input {
+            text-align: left;
+            padding: 15px 5px;
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 260px;
+            border: none;
+            color: #757575;
+            }
+
+            .cont_form_sign_up > h2 {
+            margin-top: 50px;
+            font-weight: 400;
+            color: #757575;
+            }
+
+            .cont_form_login > input {
+            padding: 15px 5px;
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 260px;
+            border: none;
+            text-align: left;
+            color: #757575;
+            }
+
+            .cont_form_login > h2 {
+            margin-top: 110px;
+            font-weight: 400;
+            color: #757575;
+            }
+            .cont_form_login > a,
+            .cont_form_sign_up > a {
+            color: #757575;
+            position: relative;
+            float: left;
+            margin: 10px;
+            margin-left: 30px;
+            }
+
+.login-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.login-overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    text-align: center;
+}
+
+.login-form {
+    display: inline-block;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #fff;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+}
